@@ -9,10 +9,77 @@ img {
 
 figcaption {
   text-align: center;
+  margin-top: 20px;
 }
 
 .content {
   margin: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.grid-item {
+  background-color: #444444;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+}
+
+.project img {
+  transition: opacity 0.3s ease;
+}
+
+.project:hover img {
+  opacity: 0.5;
+}
+
+.project .project-overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.project:hover .project-overlay {
+  opacity: 1;
+}
+
+.project .project-overlay button {
+  margin: 5px;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .navbar-nav {
