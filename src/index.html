@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/index.css">
-    <script src="scripts/index.js"></script>
+    <script src="scripts/apps.js"></script>
     <script src="https://kit.fontawesome.com/09f41a9f51.js" crossorigin="anonymous"></script>
 
 </html>
@@ -45,48 +45,81 @@
             <figure>
                 <img src="img/door-opener.jpg" class="img-fluid project">
                 <div class="project-overlay">
-                    <button onclick="location.href='description_link'" class="btn btn-primary">Description</button> <br>
+                    <button data-target="door-description" onclick="showDescription(this)"
+                        class="btn btn-info">Description</button> <br>
                     <button onclick="location.href='https://github.com/TravisJ33304/door-opener'"
-                        class="btn btn-primary">GitHub
+                        class="btn btn-info">GitHub
                         Repo</button>
                 </div>
                 <figcaption>Autonomous Door Opener</figcaption>
             </figure>
+        </div>
+        <div id="door-description" class="description-background" onclick="hideDescription('door-description')">
+            <div class="description">
+                <button onclick="hideDescription('door-description')" class="btn btn-primary">Close</button>
+                <h3>Autonomous Door Opener</h3>
+                <p>Autonomous door opener using a Raspberry Pi 3b, camera, and a stepper motor.</p>
+            </div>
         </div>
         <!-- Project 2 -->
         <div class="grid-item project">
             <figure>
                 <img src="img/homelab.png" class="img-fluid project">
                 <div class="project-overlay">
-                    <button onclick="location.href='description_link'" class="btn btn-primary">Description</button>
+                    <button data-target="homelab-description" onclick="showDescription(this)"
+                        class="btn btn-info">Description</button>
                 </div>
                 <figcaption>Homelab</figcaption>
             </figure>
+        </div>
+        <div id="homelab-description" class="description-background" onclick="hideDescription('homelab-description')">
+            <div class="description">
+                <button onclick="hideDescription('homelab-description')" class="btn btn-primary">Close</button>
+                <h3>Homelab</h3>
+                <p></p>
+            </div>
         </div>
         <!-- Project 3 -->
         <div class="grid-item project">
             <figure>
                 <img src="img/paintball.png" class="img-fluid project">
                 <div class="project-overlay">
-                    <button onclick="location.href='description_link'" class="btn btn-primary">Description</button> <br>
+                    <button data-target="paintball-description" onclick="showDescription(this)"
+                        class="btn btn-info">Description</button> <br>
                     <button onclick="location.href='https://github.com/TravisJ33304/paintball-game'"
-                        class="btn btn-primary">GitHub
+                        class="btn btn-info">GitHub
                         Repo</button>
                 </div>
                 <figcaption>Paintball Game</figcaption>
             </figure>
+        </div>
+        <div id="paintball-description" class="description-background"
+            onclick="hideDescription('paintball-description')">
+            <div class="description">
+                <button onclick="hideDescription('paintball-description')" class="btn btn-primary">Close</button>
+                <h3>Paintball Game</h3>
+                <p></p>
+            </div>
         </div>
         <!-- Project 4 -->
         <div class="grid-item project">
             <figure>
                 <img src="img/cool-max-games.png" class="img-fluid project">
                 <div class="project-overlay">
-                    <button onclick="location.href='description_link'" class="btn btn-primary">Description</button> <br>
-                    <button onclick="location.href='https://github.com/madmax1340/Carlos'"
-                        class="btn btn-primary">GitHub
+                    <button data-target="cmg-description" onclick="showDescription(this)"
+                        class="btn btn-info">Description</button> <br>
+                    <button onclick="location.href='https://github.com/madmax1340/Carlos'" class="btn btn-info">GitHub
                         Repo</button>
                 </div>
                 <figcaption class="center-caption">Cool Max Games</figcaption>
             </figure>
         </div>
+        <div id="cmg-description" class="description-background" onclick="hideDescription('cmg-description')">
+            <div class="description">
+                <button onclick="hideDescription('cmg-description')" class="btn btn-primary">Close</button>
+                <h3>Cool Max Games</h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
 </body>
