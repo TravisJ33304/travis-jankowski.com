@@ -4,7 +4,9 @@ const showDescription = (button) => {
     target.style.display = 'block';
 }
 
-const hideDescription = (targetId) => {
-    const target = document.getElementById(targetId);
-    target.style.display = 'none';
+function hideDescription(event, targetId) {
+    if (event.target.className === 'description-background' || event.target.className === 'btn btn-primary') {
+        var targetDiv = document.getElementById(targetId);
+        targetDiv.style.display = 'none';
+    }
 }
