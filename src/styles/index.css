@@ -120,3 +120,8 @@ figcaption {
   justify-content: flex-end;
   margin-right: 20px;
 }
+
+.diagram {
+  border: white 1px solid;
+  padding: 10px;
+}
