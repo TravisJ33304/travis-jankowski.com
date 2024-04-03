@@ -149,7 +149,15 @@
                         storage (NAS) operating system based on FreeBSD. Currently the array has 24TB of raw storage
                         capacity. Offsite backups are made to prevent data loss. The real star of the lab is the Proxmox
                         VE host. Proxmox VE is an open-source virtualization management platform based on Debian Linux.
-                        All of my services are hosted on virtual machines and containers on this host. 
+                        All of my services are hosted on virtual machines and containers on this host. Since I want the
+                        services to be accessible from outside the local network, I have the host connected to zerotier
+                        VPN. Zerotier provides a secure way to remotely access devices on the network. This allows me to
+                        create a secure tunnel to a cloud server hosted by Oracle. The Oracle server acts as a reverse
+                        proxy which securely routes requests from the internet to the respective services on my local
+                        host. This allows me to point my domain name to my servies and avoid exposing my local IP
+                        address. The reverse proxy also provides many benefits like load balancing and SSL termination.
+                        Since the reverse proxy is hosted by Oracle, I get the benefit of their security and DDOS
+                        protection as well.
                     </p>
             </div>
         </div>
