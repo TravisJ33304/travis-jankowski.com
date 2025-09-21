@@ -1,222 +1,635 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travis Jankowski - Software Engineer & AI Developer</title>
+    <meta
+      name="description"
+      content="Travis Jankowski - Computer Science student at MSOE, Software Engineer at Juno, and AI enthusiast. Explore my projects, experience, and skills in software development, artificial intelligence, and cybersecurity."
+    />
+    <meta
+      name="keywords"
+      content="Travis Jankowski, Software Engineer, AI Developer, Computer Science, Milwaukee School of Engineering, MSOE, Python, JavaScript, Machine Learning"
+    />
+    <meta name="author" content="Travis Jankowski" />
 
-<head>
-    <meta charset="UTF-8">
-    <title>Travis Jankowski</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <script src="scripts/apps.js"></script>
-    <script src="https://kit.fontawesome.com/09f41a9f51.js" crossorigin="anonymous"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
 
-</html>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css" />
 
-<body>
-    <!-- NavBar with start menu and widgets -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Travis Jankowski</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <a href="#home" class="navbar-brand">travis@portfolio:~$</a>
+        <button
+          class="navbar-toggle"
+          id="navbar-toggle"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
         </button>
-        <!-- NavBar links -->
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav navbar-right">
-                <!-- About link -->
-                <a class="nav-item nav-link" href="about.html">About</a>
-                <!-- GitHub link -->
-                <a class="nav-item nav-link" href="https://github.com/travisj33304" target="_blank"><i
-                        class="fab fa-github"></i></a>
-                <!-- LinkedIn link -->
-                <a class="nav-item nav-link" href="https://linkedin.com/in/travis-jankowski" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-                <!-- Discord link -->
-                <a class="nav-item nav-link" href="https://discord.com/users/hexzcracker" target="_blank"><i
-                        class="fab fa-discord"></i></a>
-            </div>
-        </div>
+        <ul class="navbar-nav" id="navbar-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-    <!-- Main content -->
-    <h2 class="content">Featured Projects</h2>
-    <div class="grid-container">
-        <!-- Project 1 -->
-        <div class="grid-item project">
-            <figure>
-                <img src="img/door-opener.jpg" class="img-fluid project">
-                <div class="project-overlay">
-                    <button data-target="door-description" onclick="showDescription(this)"
-                        class="btn btn-info">Description</button> <br>
-                    <button onclick="location.href='https://github.com/TravisJ33304/door-opener'"
-                        class="btn btn-info">GitHub
-                        Repo</button>
-                </div>
-                <figcaption>Autonomous Door Opener</figcaption>
-            </figure>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Travis Jankowski</h1>
+          <p class="subtitle">Computer Science Student & Software Engineer</p>
+          <div class="typing-text" id="typing-text">
+            Building the future with code<span class="typing-cursor"></span>
+          </div>
+          <div style="margin-top: 2rem">
+            <a href="#about" class="btn btn-primary">Explore My Work</a>
+            <a href="#contact" class="btn">Get In Touch</a>
+          </div>
         </div>
-        <div id="door-description" class="description-background" onclick="hideDescription(event, 'door-description')">
-            <div class="description">
-                <button onclick="hideDescription(event, 'door-description')" class="btn btn-primary">Close</button>
-                <h3>Autonomous Door Opener</h3>
-                <p>Autonomous door opener using a Raspberry Pi 3b, camera, and a stepper motor.</p>
-                <p>
-                    The goal of this project was to make a device that will watch the outside of my door and
-                    use a deep learning model to determine if the person at the door is authorized to enter.
-                    After an authorized person is detected, the stepper motor will open the door.
-                </p>
-                <p>The first step of the project was getting the hardware set up and working.</p>
-                <p>
-                    I chose to use a Raspberry Pi as the main controller because I already had it
-                    and it can run the camera, deep learning model, and stepper motor. The camera
-                    I used was an official Raspberry Pi camera module because it is small and can
-                    connect to the Pi easily. The motor I used was a bipolar stepper motor that
-                    was harvested from a broken 3d printer. I purchased an EasyDriver stepper motor
-                    driver to control the motor. Other components such as power supplies and
-                    jumper wires were also used. To get the hardware working, I had to connect the
-                    camera and motor to the Pi. A diagram of the motor wiring can be found below.
-                </p>
-                <img src="img/circuit.png" class="img-fluid">
-                <p><strong>Diagram generated by <a href="https://circuito.io">Circuito.io</a></strong></p>
-                <p>
-                    Important things to note about the diagram: <br> Seperate power supplies were used
-                    for the Pi and the motor. The motor power supply has the positive lead connected to
-                    the motor driver power and the ground is connected to the motor driver ground as well
-                    as the Pi ground. The motor driver STEP and DIR pins are connected to the Pi GPIO pins
-                    to control the motor. Lastly, the A and B motor leads are connected to the motor driver.
-                    After the motor driver is fully wired, the motor can be tested using a simple Python
-                    script included in the github repository.
-                </p>
-                <p>
-                    After the hardware is set up, the software can be completed. My main aspiration
-                    for this project was to get the deep learning model working. An Important
-                    aspect to consider for this project was the hardware limitations of the Pi.
-                    With no hardware acceleration and only 1GB of RAM, the model would have to be
-                    very lightweight. I chose to use the MobileNet model as a base model because
-                    it can fit in the Pi's memory and it is fast. After downloading the model,
-                    I implemented transfer learning with my own custom dataset of authorized
-                    people. The dataset is compiled from images I have taken of myself. The
-                    dataset is small consisting of around 100 images. Another label used for
-                    training was the "unauthorized" label. This label was created to capture
-                    anything that is not me. After training, the model reports about 90% testing
-                    accuracy.
-                </p>
-                <p>
-                    Once a trained model has been saved, then the main application can be completed.
-                    I created a class called MotorDriver that uses the RPi.GPIO library to control
-                    the motor. The class has methods to open and close the door. Another class called
-                    ImageClassifier takes a model path and a MotorDriver object as arguments. This
-                    class is responsible for loading the model weights and making predictions. After
-                    the model is loaded a loop is started which takes a picture from the camera and
-                    makes a prediction using the model. If the prediction is "authorized" then the
-                    MotorDriver object is called to open the door. The loop continues until the program
-                    is stopped.
-                </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="grid grid-2">
+          <div>
+            <p>
+              Hi! I'm a Computer Science senior at the Milwaukee School of
+              Engineering with over 4 years of industry experience across
+              software engineering, artificial intelligence, and cybersecurity.
+            </p>
+
+            <p>
+              My journey with technology started when I got my first computer at
+              age 10. From learning HTML and JavaScript in middle school to
+              developing enterprise applications at Cognex Corporation, I've
+              been passionate about using technology to solve real-world
+              problems.
+            </p>
+
+            <p>
+              Currently, I'm working as an AI Engineer at Juno, where I build
+              sophisticated AI agents using LangGraph to accelerate tax
+              preparation processes for CPAs. I'm also actively involved in
+              student organizations as President of Midnight Robotics and
+              Webmaster of AI Club at MSOE.
+            </p>
+
+            <p>
+              I'm dedicated to continuous learning and growth, always excited to
+              explore new technologies and take on challenging projects that
+              push the boundaries of what's possible.
+            </p>
+          </div>
+          <div>
+            <div class="profile-image-container">
+              <img
+                src="img/portrait.jpg"
+                alt="Travis Jankowski"
+                class="profile-image"
+              />
             </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="grid-item project">
-            <figure>
-                <img src="img/homelab.png" class="img-fluid project">
-                <div class="project-overlay">
-                    <button data-target="homelab-description" onclick="showDescription(this)"
-                        class="btn btn-info">Description</button>
-                </div>
-                <figcaption>Homelab</figcaption>
-            </figure>
-        </div>
-        <div id="homelab-description" class="description-background"
-            onclick="hideDescription(event, 'homelab-description')">
-            <div class="description">
-                <button onclick="hideDescription(event, 'homelab-description')" class="btn btn-primary">Close</button>
-                <h3>Homelab</h3>
-                <h5>Background</h5>
-                <p>
-                    My homelab is a collection of servers and networking equipment that I use to learn
-                    about networking and server administration. The lab is built on a budget and is
-                    constantly changing. The lab is used to host websites, game servers, and other
-                    services. I started the lab by installing Ubuntu on my dads old desktop computer.
-                    Since then the lab has grown to serve myself, my family, and my friends.
-                </p>
-                <h5>Network Diagram</h2>
-                    <img src="img/homelab.drawio.png" class="img-fluid diagram">
-                    <p>Diagram created using <a href="https://diagrams.net">diagrams.net</a></p>
-                    <p>
-                        This diagram provides an overview of my network. First is the pfSense firewall which controls
-                        access to the internet. pfSense is a powerful open-source firewall based on FreeBSD OS that can
-                        be run on most consumer hardware. The firewall is connected to a switch which connects all the
-                        devices in my network. The next appliance is the TrueNAS Core server which provides network
-                        storage and backups on a redundant ZFS pool. TrueNAS Core is an open-source network-attached
-                        storage (NAS) operating system based on FreeBSD. Currently the array has 24TB of raw storage
-                        capacity. Offsite backups are made to prevent data loss. The real star of the lab is the Proxmox
-                        VE host. Proxmox VE is an open-source virtualization management platform based on Debian Linux.
-                        All of my services are hosted on virtual machines and containers on this host. Since I want the
-                        services to be accessible from outside the local network, I have the host connected to zerotier
-                        VPN. Zerotier provides a secure way to remotely access devices on the network. This allows me to
-                        create a secure tunnel to a cloud server hosted by Oracle. The Oracle server acts as a reverse
-                        proxy which securely routes requests from the internet to the respective services on my local
-                        host. This allows me to point my domain name to my servies and avoid exposing my local IP
-                        address. The reverse proxy also provides many benefits like load balancing and SSL termination.
-                        Since the reverse proxy is hosted by Oracle, I get the benefit of their security and DDOS
-                        protection as well.
-                    </p>
+            <div class="card">
+              <h3>Quick Facts</h3>
+              <ul style="list-style: none; padding: 0">
+                <li style="margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-graduation-cap"
+                    style="color: var(--terminal-green); margin-right: 0.5rem"
+                  ></i
+                  >B.S. Computer Science, MSOE (Expected May 2026)
+                </li>
+                <li style="margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-briefcase"
+                    style="color: var(--terminal-green); margin-right: 0.5rem"
+                  ></i
+                  >AI Engineer at Juno
+                </li>
+                <li style="margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-code"
+                    style="color: var(--terminal-green); margin-right: 0.5rem"
+                  ></i
+                  >4+ years industry experience
+                </li>
+                <li style="margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-award"
+                    style="color: var(--terminal-green); margin-right: 0.5rem"
+                  ></i
+                  >NVIDIA Deep Learning Certified
+                </li>
+                <li style="margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-users"
+                    style="color: var(--terminal-green); margin-right: 0.5rem"
+                  ></i
+                  >President, Midnight Robotics
+                </li>
+                <li style="margin-bottom: 0.5rem">
+                  <i
+                    class="fas fa-robot"
+                    style="color: var(--terminal-green); margin-right: 0.5rem"
+                  ></i
+                  >Webmaster, AI Club
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
-        <!-- Project 3 -->
-        <div class="grid-item project">
-            <figure>
-                <img src="img/paintball.png" class="img-fluid project">
-                <div class="project-overlay">
-                    <button data-target="paintball-description" onclick="showDescription(this)"
-                        class="btn btn-info">Description</button> <br>
-                    <button onclick="location.href='https://github.com/TravisJ33304/paintball-game'"
-                        class="btn btn-info">GitHub
-                        Repo</button>
-                </div>
-                <figcaption>Paintball Game</figcaption>
-            </figure>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2>Technical Skills</h2>
+
+        <h3>Programming Languages</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-name">Python</div>
+            <div class="skill-level">Expert</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-level">Expert</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">TypeScript</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">C++</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Java</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">C#</div>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">SQL</div>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Kotlin</div>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Rust</div>
+            <div class="skill-level">Beginner</div>
+          </div>
         </div>
-        <div id="paintball-description" class="description-background"
-            onclick="hideDescription(event, 'paintball-description')">
-            <div class="description">
-                <button onclick="hideDescription(event, 'paintball-description')" class="btn btn-primary">Close</button>
-                <h3>Paintball Game</h3>
-                <p>
-                    This paintball game was created because I wanted to improve my skills with full stack web
-                    development. The game was created using HTML, CSS, and Javascript on the frontend. For the backend I
-                    used Node.js. The game is a simple 2D shooter where the player can move around and shoot paintballs
-                    at other people on the game. I used Express to create the server and Socket.io to handle the
-                    client-server communication. Web sockets was the ideal protocol because it allows for fast
-                    bi-directional communication to transmit game data. I learned a lot about networking and backend
-                    development while creating this game.
-                </p>
+
+        <h3>Frameworks & Libraries</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-name">Angular.js</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">React.js</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Node.js</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">PyTorch</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">TensorFlow</div>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Keras</div>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">LangChain</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">LangGraph</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+        </div>
+
+        <h3>Tools & Technologies</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-name">Git</div>
+            <div class="skill-level">Expert</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">AWS</div>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Terraform</div>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Linux</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Docker</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Agile/Scrum</div>
+            <div class="skill-level">Advanced</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2>Professional Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">September 2025 - Present</div>
+            <h3 class="timeline-title">Artificial Intelligence Engineer</h3>
+            <div class="timeline-company">Juno • Milwaukee, WI</div>
+            <div class="timeline-description">
+              <p>
+                Using LangGraph to build sophisticated AI agents that accelerate
+                the tax preparation and tax review processes for CPAs. Adding
+                functionality to analyze and compare previous year's tax returns
+                with current year's return to verify optimal tax strategy is
+                utilized including application of carryover losses and other
+                factors.
+              </p>
+              <ul style="margin-top: 1rem">
+                <li>
+                  Developed AI agents using LangGraph for automated tax
+                  preparation workflows
+                </li>
+                <li>
+                  Built tax return analysis systems to optimize tax strategy
+                  implementation
+                </li>
+                <li>
+                  Integrated carryover loss analysis and compliance verification
+                  features
+                </li>
+              </ul>
             </div>
-        </div>
-        <!-- Project 4 -->
-        <div class="grid-item project">
-            <figure>
-                <img src="img/cool-max-games.png" class="img-fluid project">
-                <div class="project-overlay">
-                    <button data-target="cmg-description" onclick="showDescription(this)"
-                        class="btn btn-info">Description</button> <br>
-                    <button onclick="location.href='https://github.com/madmax1340/Carlos'" class="btn btn-info">GitHub
-                        Repo</button>
-                </div>
-                <figcaption class="center-caption">Cool Max Games</figcaption>
-            </figure>
-        </div>
-        <div id="cmg-description" class="description-background" onclick="hideDescription(event, 'cmg-description')">
-            <div class="description">
-                <button onclick="hideDescription(event, 'cmg-description')" class="btn btn-primary">Close</button>
-                <h3>Cool Max Games</h3>
-                <p>
-                    Cool Max Games is a website that I started development on in middle school with one of my friends.
-                    It contains some of the first code that I ever wrote. The website is a collection of games that we
-                    made using HTML, CSS, and Javascript. Our hope was that we could provide entertaining games for our
-                    friends at school and learn valuable skills along the way. The website is hosted using Netlify for
-                    continuous integration and continuous deployment. This website sparked my passion for software
-                    engineering which I have been pursuing ever since.
-                </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">November 2022 - September 2025</div>
+            <h3 class="timeline-title">Software Engineer Intern</h3>
+            <div class="timeline-company">
+              Cognex Corporation • Milwaukee, WI
             </div>
+            <div class="timeline-description">
+              <p>
+                <strong>Web UI Scrum Team:</strong> Drove full-stack feature
+                development by building scalable Angular.js interfaces and
+                integrating them with robust Python backend APIs. Built features
+                that provide powerful customization for customer devices
+                enabling complex code reading and automation workflows.
+              </p>
+              <p>
+                <strong>Testing & CI Scrum Team:</strong> Engineered functional
+                and integration tests for product software using Python, C#, and
+                C++ and used testing to verify supported features before product
+                releases. Reduced build wait times by up to 40% through
+                refactoring tests and extending build infrastructure.
+              </p>
+              <ul style="margin-top: 1rem">
+                <li>
+                  Developed scalable Angular.js front-end applications with
+                  Python backend integration
+                </li>
+                <li>
+                  Built custom device configuration interfaces for automation
+                  workflows
+                </li>
+                <li>
+                  Reduced CI/CD build times by 40% through test optimization and
+                  infrastructure improvements
+                </li>
+                <li>
+                  Created comprehensive test suites using Python, C#, and C++
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">June 2021 - July 2022</div>
+            <h3 class="timeline-title">Information Technology Intern</h3>
+            <div class="timeline-company">
+              Kaukauna Utilities • Kaukauna, WI
+            </div>
+            <div class="timeline-description">
+              <p>
+                Provided systems administration and network support for 150+
+                staff and managed over 1,000 assets. Assisted in maintaining
+                Geographic Information System services and hardening assets to
+                prevent security incidents. Fulfilled user requests and reduced
+                ticket backlog by 30%.
+              </p>
+              <ul style="margin-top: 1rem">
+                <li>
+                  Managed IT infrastructure for 150+ users and 1,000+ assets
+                </li>
+                <li>
+                  Implemented cybersecurity hardening measures following
+                  government standards
+                </li>
+                <li>Maintained GIS services for utility operations</li>
+                <li>
+                  Reduced help desk ticket backlog by 30% through efficient
+                  issue resolution
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-</body>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <i
+                class="fas fa-robot"
+                style="font-size: 3rem; color: var(--terminal-green)"
+              ></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                Hydro Turbine-Generator Control System
+              </h3>
+              <p class="project-description">
+                Senior Capstone project for L&S Electric designing an
+                intelligent control system to automate hydro turbine-generator
+                tuning. Uses machine learning to optimize control settings in
+                real-time for enhanced performance and reliability.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Embedded Systems</span>
+                <span class="tech-tag">Control Systems</span>
+                <span class="tech-tag">Real-time Processing</span>
+              </div>
+              <div class="project-links"></div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i
+                class="fas fa-flask"
+                style="font-size: 3rem; color: var(--terminal-green)"
+              ></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Lab Materials Volume Predictor</h3>
+              <p class="project-description">
+                1st Place winner at Innovation Lab Competition. Desktop
+                application using segmentation and regression neural networks to
+                predict container volumes from images with 90% accuracy for
+                Brady Corp.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">Neural Networks</span>
+                <span class="tech-tag">Image Segmentation</span>
+                <span class="tech-tag">Desktop App</span>
+              </div>
+              <div class="project-links">
+                <p><i class="fas fa-trophy"></i> Award Winner</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i
+                class="fas fa-balance-scale"
+                style="font-size: 3rem; color: var(--terminal-green)"
+              ></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Legal Agent Benchmarking Framework</h3>
+              <p class="project-description">
+                Data Science Practicum project with Obviate AI developing a
+                novel framework for evaluating LLM agents in legal contract
+                analysis. Created open-source web application for benchmark
+                execution and comparison.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">LLM Evaluation</span>
+                <span class="tech-tag">Web Application</span>
+                <span class="tech-tag">Legal Tech</span>
+                <span class="tech-tag">Open Source</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i
+                class="fas fa-file-invoice-dollar"
+                style="font-size: 3rem; color: var(--terminal-green)"
+              ></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Autonomous Tax Review Agent</h3>
+              <p class="project-description">
+                3rd place winner at Innovation Lab Competition. Developed an AI
+                agent application for TruePrep AI that cross-checks tax
+                documents and returns to ensure correct data entry and optimize
+                tax savings. Achieved over 90% accuracy in detecting errors and
+                inefficiencies using mock tax data.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">AI Agents</span>
+                <span class="tech-tag">Tax Technology</span>
+                <span class="tech-tag">Document Analysis</span>
+                <span class="tech-tag">Error Detection</span>
+                <span class="tech-tag">CPA Tools</span>
+              </div>
+              <div class="project-links">
+                <p><i class="fas fa-trophy"></i> Award Winner</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i
+                class="fas fa-universal-access"
+                style="font-size: 3rem; color: var(--terminal-green)"
+              ></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Museum Exhibit Accessibility Aid</h3>
+              <p class="project-description">
+                2nd place winner at Hacksgiving Hackathon. Mobile application
+                for Discovery World visitors that senses nearby exhibits using
+                ESP32 Bluetooth beacons. The app leverages LLM agents with
+                vector database access to make exhibits more accessible based on
+                visitor's age, native language, and disability information.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">Mobile App</span>
+                <span class="tech-tag">LLM Agents</span>
+                <span class="tech-tag">ESP32</span>
+                <span class="tech-tag">Bluetooth</span>
+                <span class="tech-tag">Vector Database</span>
+                <span class="tech-tag">Accessibility</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/xDazld/HacksGiving-2024"
+                  target="_blank"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <i
+                class="fas fa-server"
+                style="font-size: 3rem; color: var(--terminal-green)"
+              ></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Homelab Infrastructure</h3>
+              <p class="project-description">
+                A comprehensive homelab built on a budget, featuring opnSense
+                firewall, TrueNAS Core storage with 24TB capacity, and Proxmox
+                VE virtualization. Includes secure remote access via ZeroTier
+                VPN and Oracle Cloud reverse proxy for public service hosting.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">pfSense</span>
+                <span class="tech-tag">Proxmox VE</span>
+                <span class="tech-tag">TrueNAS Core</span>
+                <span class="tech-tag">ZeroTier</span>
+                <span class="tech-tag">Oracle Cloud</span>
+                <span class="tech-tag">ZFS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Get In Touch</h2>
+        <p
+          style="
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--terminal-text-dim);
+          "
+        >
+          Let's connect! I'm always interested in discussing new opportunities
+          and learning.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="contact-title">Email</h3>
+            <div class="contact-info">
+              <a href="mailto:dev@travis-jankowski.com"
+                >dev@travis-jankowski.com</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <h3 class="contact-title">LinkedIn</h3>
+            <div class="contact-info">
+              <a href="https://linkedin.com/in/travis-jankowski" target="_blank"
+                >travis-jankowski</a
+              >
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3 class="contact-title">GitHub</h3>
+            <div class="contact-info">
+              <a href="https://github.com/travisj33304" target="_blank"
+                >travisj33304</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: var(--terminal-bg-secondary);
+        padding: 2rem 0;
+        text-align: center;
+        border-top: 1px solid var(--terminal-border);
+      "
+    >
+      <div class="container">
+        <p
+          style="
+            margin: 0;
+            color: var(--terminal-text-dim);
+            font-size: var(--font-size-small);
+          "
+        >
+          © 2025 Travis Jankowski
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
